@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anh Thái Vũ - Người Ngứa Ngáy Khó Chịu Bậc Nhất</title>
+
+<style>
+body {
+    margin: 0;
+    background: url("Anh Thái Vũ - người ngứa ngáy khó chịu bậc nhất.png") no-repeat center center fixed;
+    background-size: contain;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Tiêu đề */
+h1 {
+    margin-top: 50px;
+    font-size: 45px;
+    color: yellow;
+    text-shadow: 0 0 20px orange;
+    animation: itchTitle 1s infinite alternate;
+}
+
+@keyframes itchTitle {
+    from { transform: rotate(-1deg); }
+    to { transform: rotate(1deg); }
+}
+
+/* Nút */
+button {
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#itchBtn {
+    background: orange;
+}
+
+#itchBtn:hover {
+    background: red;
+    transform: scale(1.1);
+}
+
+#ultimateItch {
+    background: linear-gradient(45deg, purple, red);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 20px red;
+}
+
+/* Chữ bay */
+.itchText {
+    position: absolute;
+    top: -50px;
+    font-size: 25px;
+    color: pink;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* Rung màn hình */
+body.shake {
+    animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(2px,2px); }
+    25% { transform: translate(-2px,-2px); }
+    50% { transform: translate(2px,-2px); }
+    75% { transform: translate(-2px,2px); }
+    100% { transform: translate(0,0); }
+}
+
+/* Emoji gãi */
+.scratch {
+    position: absolute;
+    font-size: 30px;
+    animation: scratchMove 1s linear forwards;
+}
+
+@keyframes scratchMove {
+    to {
+        transform: translateY(-150px) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Overlay siêu ngứa */
+.superItch {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,0,0,0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    z-index: 9999;
+    animation: flash 0.3s infinite;
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>😖 Anh Thái Vũ - Người Ngứa Ngáy Khó Chịu Bậc Nhất 😖</h1>
+
+<p>Ngứa một chút thôi... mà khó chịu cả vũ trụ 😭</p>
+
+<button id="itchBtn">🔥 KÍCH HOẠT NGỨA 🔥</button>
+<button id="ultimateItch">🌋 NGỨA CẤP VŨ TRỤ 🌋</button>
+
+<script>
+const itchMessages = [
+    "NGỨA!!! 😭",
+    "Khó chịu quá!!!",
+    "Không chịu nổi!!!",
+    "Ai cứu với!!!",
+    "Gãi gãi gãi!!!"
+];
+
+function createItchText() {
+    const text = document.createElement("div");
+    text.className = "itchText";
+    text.innerText = itchMessages[Math.floor(Math.random()*itchMessages.length)];
+    text.style.left = Math.random()*window.innerWidth + "px";
+    text.style.animationDuration = (2 + Math.random()*2) + "s";
+    document.body.appendChild(text);
+    setTimeout(()=>text.remove(),4000);
+}
+
+document.getElementById("itchBtn").addEventListener("click", ()=>{
+    for(let i=0;i<15;i++){
+        setTimeout(createItchText,i*150);
+    }
+});
+
+/* Click màn hình hiện gãi */
+document.addEventListener("click",(e)=>{
+    for(let i=0;i<5;i++){
+        const scratch=document.createElement("div");
+        scratch.className="scratch";
+        scratch.innerText="🖐️";
+        scratch.style.left=(e.clientX + Math.random()*40 -20)+"px";
+        scratch.style.top=(e.clientY + Math.random()*40 -20)+"px";
+        document.body.appendChild(scratch);
+        setTimeout(()=>scratch.remove(),1000);
+    }
+});
+
+/* Ultimate */
+document.getElementById("ultimateItch").addEventListener("click",()=>{
+    document.body.classList.add("shake");
+
+    const overlay=document.createElement("div");
+    overlay.className="superItch";
+    overlay.innerText="🌋 NGỨA TOÀN VŨ TRỤ 🌋";
+    document.body.appendChild(overlay);
+
+    setInterval(createItchText,100);
+
+    setTimeout(()=>{
+        overlay.remove();
+        document.body.classList.remove("shake");
+    },5000);
+});
+</script>
+
+</body>
+</html>
