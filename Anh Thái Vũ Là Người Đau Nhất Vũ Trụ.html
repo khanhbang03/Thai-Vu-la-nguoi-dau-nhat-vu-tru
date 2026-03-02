@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anh Thái Vũ Là Người Đau Nhất Vũ Trụ</title>
+
+<style>
+body {
+    margin: 0;
+    background: url("Thái Vũ là người đau nhất vũ trụ.png") no-repeat center center fixed;
+    background-size: contain;   /* hoặc cover */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 45px;
+    color: #ff4d4d;
+    text-shadow: 0 0 20px red;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+p {
+    font-size: 20px;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+button {
+    margin: 15px;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#jealousBtn {
+    background: crimson;
+    color: white;
+}
+
+#jealousBtn:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+#dramaBtn {
+    background: gold;
+    color: black;
+}
+
+#dramaBtn:hover {
+    background: orange;
+    transform: scale(1.1);
+}
+
+.falling {
+    position: absolute;
+    top: -50px;
+    font-size: 18px;
+    color: pink;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+.poem, .song {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+.poem h2, .song h2 {
+    color: #ff6666;
+}
+
+#ultimateBtn {
+    background: linear-gradient(45deg, red, purple);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 20px red;
+}
+
+body.shake {
+    animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: explode 1.5s linear forwards;
+}
+
+@keyframes explode {
+    to {
+        transform: translateY(-200px) scale(2);
+        opacity: 0;
+    }
+}
+
+.galaxy {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #220033, #000);
+    animation: spin 20s linear infinite;
+    z-index: -2;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rainText {
+    position: absolute;
+    top: -30px;
+    font-size: 20px;
+    color: #ff4d4d;
+    animation: rainFall linear forwards;
+}
+
+@keyframes rainFall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+#destroyBtn {
+    background: black;
+    color: red;
+    font-weight: bold;
+    box-shadow: 0 0 25px red;
+}
+
+.warning {
+    position: fixed;
+    inset: 0;
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    z-index: 9999;
+    animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.explosion {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 99999;
+}
+
+.titleGod {
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    text-align: center;
+    z-index: 999999;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.blackhole {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, black 40%, purple);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: growHole 3s forwards;
+    z-index: 9999999;
+}
+
+@keyframes growHole {
+    to {
+        width: 3000px;
+        height: 3000px;
+    }
+}
+
+.rebirth {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #001133, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cyan;
+    font-size: 40px;
+    text-align: center;
+    z-index: 99999999;
+    opacity: 0;
+    animation: fadeRebirth 3s forwards;
+}
+
+@keyframes fadeRebirth {
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>💔 Anh Thái Vũ Là Người Đau Nhất Vũ Trụ 💔</h1>
+
+<p>Trái tim tan vỡ... vì Khánh Bằng có ghen 😭</p>
+
+<button id="jealousBtn">🔥 Khánh Bằng Ghen 🔥</button>
+<button id="dramaBtn">🌧️ Kích Hoạt Drama 🌧️</button>
+<button id="ultimateBtn">🌌 ULTIMATE GHEN LEVEL 999 🌌</button>
+<button id="destroyBtn">💣 GHEN HỦY DIỆT LEVEL 10000 💣</button>
+
+<div class="poem">
+<h2>💔 Người Đau Nhất Vũ Trụ 💔</h2>
+<p>
+Giữa ngân hà lặng im không tiếng nói,<br>
+Anh Thái Vũ đứng đó giữa chơi vơi.<br>
+Một ánh mắt khiến tim anh nhức nhối,<br>
+Khánh Bằng ghen… mà anh vẫn mỉm cười.<br><br>
+
+Ghen một chút cho tình thêm sóng gió,<br>
+Ghen một lần mà vũ trụ rung rinh.<br>
+Đau một chút nhưng lòng không bỏ ngỏ,<br>
+Vì phía sau… vẫn còn chút nghĩa tình.<br><br>
+
+Nếu mai này sao trời thôi rực rỡ,<br>
+Nếu yêu thương thành ký ức xa xôi,<br>
+Anh vẫn sẽ là người đau nhất đó,<br>
+Giữa vũ trụ rộng lớn… chỉ mình thôi.
+</p>
+</div>
+
+<div class="song">
+<h2>🎵 Anh Đau Nhất Vũ Trụ 🎵</h2>
+<p>
+[Verse 1]<br>
+Anh đứng giữa thiên hà đầy giông tố,<br>
+Trái tim này như vỡ giữa ngân hà.<br>
+Một câu ghen làm cả trời nghiêng đổ,<br>
+Khánh Bằng ơi, anh biết phải làm sao?<br><br>
+
+[Pre-Chorus]<br>
+Ghen là vì yêu quá nhiều,<br>
+Đau là vì thương quá sâu…<br><br>
+
+[Chorus]<br>
+Anh là người đau nhất vũ trụ này,<br>
+Giữa hàng tỷ vì sao vẫn lạc lối.<br>
+Nếu một ngày em quay lưng bước vội,<br>
+Thì tim anh… hóa thành bụi sao rơi.<br><br>
+
+Anh là người đau nhất vũ trụ này,<br>
+Nhưng vẫn yêu dù tim đầy vết xước.<br>
+Ghen một chút cho tình thêm mộng ước,<br>
+Rồi lại cười… dù nước mắt chưa khô.
+</p>
+</div>
+
+<script>
+const messages = [
+    "Anh Thái Vũ đau quá 😭",
+    "Khánh Bằng đang ghen 🔥",
+    "Tình yêu đầy sóng gió 💔",
+    "Drama level: Vũ Trụ 🌌",
+    "Ghen mà vẫn thương 🥹"
+];
+
+function createFallingText() {
+    const text = document.createElement("div");
+    text.className = "falling";
+    text.innerText = messages[Math.floor(Math.random() * messages.length)];
+    text.style.left = Math.random() * window.innerWidth + "px";
+    text.style.animationDuration = (2 + Math.random() * 3) + "s";
+    document.body.appendChild(text);
+
+    setTimeout(() => {
+        text.remove();
+    }, 5000);
+}
+
+document.getElementById("jealousBtn").addEventListener("click", () => {
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createFallingText, i * 150);
+    }
+});
+
+document.getElementById("dramaBtn").addEventListener("click", () => {
+    setInterval(createFallingText, 200);
+});
+</script>
+
+<script>
+const ultimateBtn = document.getElementById("ultimateBtn");
+
+function createHeart(x, y) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "💔";
+    heart.style.left = x + "px";
+    heart.style.top = y + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 1500);
+}
+
+function createRain999() {
+    const text = document.createElement("div");
+    text.className = "rainText";
+    text.innerText = "GHEN 999 🔥";
+    text.style.left = Math.random() * window.innerWidth + "px";
+    text.style.animationDuration = (2 + Math.random() * 2) + "s";
+    document.body.appendChild(text);
+    setTimeout(() => text.remove(), 4000);
+}
+
+ultimateBtn.addEventListener("click", () => {
+
+    // Rung màn hình
+    document.body.classList.add("shake");
+
+    // Thêm nền vũ trụ
+    const galaxy = document.createElement("div");
+    galaxy.className = "galaxy";
+    document.body.appendChild(galaxy);
+
+    // Mưa chữ 999
+    setInterval(createRain999, 150);
+
+});
+
+// Click màn hình nổ tim
+document.addEventListener("click", (e) => {
+    for (let i = 0; i < 5; i++) {
+        createHeart(e.clientX + Math.random()*50 -25,
+                    e.clientY + Math.random()*50 -25);
+    }
+});
+</script>
+
+<script>
+const destroyBtn = document.getElementById("destroyBtn");
+
+destroyBtn.addEventListener("click", () => {
+
+    let count = 5;
+
+    const warning = document.createElement("div");
+    warning.className = "warning";
+    warning.innerText = "⚠ GHEN HỦY DIỆT KÍCH HOẠT ⚠\n" + count;
+    document.body.appendChild(warning);
+
+    const interval = setInterval(() => {
+        count--;
+        warning.innerText = "⚠ GHEN HỦY DIỆT KÍCH HOẠT ⚠\n" + count;
+
+        if (count === 0) {
+            clearInterval(interval);
+            warning.remove();
+
+            // Nổ trắng màn hình
+            const boom = document.createElement("div");
+            boom.className = "explosion";
+            document.body.appendChild(boom);
+
+            setTimeout(() => {
+                boom.remove();
+
+                // Hiện danh hiệu
+                const god = document.createElement("div");
+                god.className = "titleGod";
+                god.innerHTML = "👑 KHÁNH BẰNG 👑<br>ĐÃ ĐẠT GHEN THẦN CẤP<br>HỦY DIỆT ĐA VŨ TRỤ";
+                document.body.appendChild(god);
+                // Sau 6 giây → tái sinh
+                setTimeout(() => {
+                    rebirthUniverse();
+                }, 1000);
+
+            }, 800);
+        }
+
+    }, 1000);
+});
+</script>
+
+<script>
+// Hàm tái sinh vũ trụ
+function rebirthUniverse() {
+
+    // Lỗ đen xuất hiện
+    const hole = document.createElement("div");
+    hole.className = "blackhole";
+    document.body.appendChild(hole);
+
+    setTimeout(() => {
+        hole.remove();
+
+        // Màn hình tái sinh
+        const rebirth = document.createElement("div");
+        rebirth.className = "rebirth";
+        rebirth.innerHTML = `
+        🌌 VŨ TRỤ ĐÃ TÁI SINH 🌌<br><br>
+        💖 KHÁNH BẰNG ĐÃ HẾT GHEN 💖<br><br>
+        Bắt đầu lại từ đầu...
+        `;
+        document.body.appendChild(rebirth);
+
+        // Reset rung màn hình
+        document.body.classList.remove("shake");
+
+        // Sau 8 giây reset toàn bộ
+        setTimeout(() => {
+            location.reload();
+        }, 8000);
+
+    }, 3000);
+}
+</script>
+</body>
+</html>
